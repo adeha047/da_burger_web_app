@@ -4,6 +4,7 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
+      console.log("click")
   
       var newBurger= {
         burger_name: $("#newBurger").val().trim(),
@@ -25,14 +26,18 @@ $(function() {
 
     $(".eatburger").on("click", function(event) {
         let id = $(this).data("id");
-        let devouredBurger = {
-            devoured: 1
-        }; 
+        let devouredBurger = $(this).data("devouredBurger");
+        // let devouredBurger = {
+        //     devoured: 1
+        // }; 
+        let devouredState = {
+          devoured: devouredBurger
+        };
 
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
           type: "PUT",
-          data: devouredBurger
+          data: devouredState
         }).then(
           function() {
             console.log("Burger devoured");
