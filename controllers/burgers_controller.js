@@ -20,7 +20,7 @@ router.post("/api/burgers", function(req, res) {
   burger.create([
     "burger_name", "devoured"
   ], [
-    req.body.name, req.body.sleepy
+    req.body.burger_name, req.body.devoured
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -33,7 +33,7 @@ router.put("/api/burgers/:id", function(req, res) {
   console.log("condition", condition);
 
   burger.update({
-    devoured: req.body.sleepy
+    devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -41,6 +41,18 @@ router.put("/api/burgers/:id", function(req, res) {
     } else {
       res.status(200).end();
     }
+  });
+
+  router.delete("/api/burgers/:id", (req, res) => {
+    // req.params --> we have req.params.id
+    // req.body --> not needed
+    // query.... no do we have model? --> we will use the cat.delete
+    burger.delete({ id: req.params.id }, data => {
+      // errs -> no error input
+      // data hande it
+      console.log(data);
+      res.json(data);
+    });
   });
 });
 
