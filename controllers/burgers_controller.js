@@ -46,10 +46,9 @@ router.put("/api/burgers/:id", function(req, res) {
   router.delete("/api/burgers/:id", (req, res) => {
     // req.params --> we have req.params.id
     // req.body --> not needed
-    // query.... no do we have model? --> we will use the cat.delete
     burger.delete({ id: req.params.id }, data => {
       // errs -> no error input
-      // data hande it
+      // data handle it
       console.log(data);
       res.json(data);
     });
