@@ -44,7 +44,7 @@ function objToSql(ob) {
 //   * `selectAll()`
 
 let orm = {
-    selectall: function (tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM ??;";
         connection.query(queryString, [tableInput], function (err, result) {
             if (err) {
@@ -98,7 +98,7 @@ let orm = {
     },
 
     //deleteOne()
-    deleteOne: function(table, condition, cb) {
+    deleteOne: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
@@ -122,5 +122,5 @@ let orm = {
 // * Export the ORM object in `module.exports`.
 
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
