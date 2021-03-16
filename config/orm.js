@@ -79,38 +79,65 @@ let orm = {
     },
 
     //   * `updateOne()`
-    updateOne: function (table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+    // updateOne: function (table, objColVals, condition, cb) {
+    //     var queryString = "UPDATE " + table;
 
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
+    //     queryString += " SET ";
+    //     queryString += objToSql(objColVals);
+    //     queryString += " WHERE ";
+    //     queryString += condition;
 
-        console.log(queryString);
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
+    //     console.log(queryString);
+    //     connection.query(queryString, function (err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
 
-            cb(result);
+    //         cb(result);
+    //     });
+    // },
+
+    updateOne: function(table1, filters, cb){
+        let query = "UPDATE FROM ?? WHERE ?";
+    
+        connection.query(query, [table1, filters], (err, result) => {
+          if(err) {
+            throw err;
+          }
+          cb(result);
         });
+      
     },
+   
+
+
 
     //deleteOne()
-    deleteOne: function (table, condition, cb) {
-        var queryString = "DELETE FROM " + table;
-        queryString += " WHERE ";
-        queryString += condition;
+    // deleteOne: function (table, condition, cb) {
+    //     var queryString = "DELETE FROM " + table;
+    //     queryString += " WHERE ";
+    //     queryString += condition;
     
-        console.log(queryString);
+    //     console.log(queryString);
     
-        connection.query(queryString, function(err, result) {
-            if (err) {
-                throw err
-            }
-            cb(result);
+    //     connection.query(queryString, function(err, result) {
+    //         if (err) {
+    //             throw err
+    //         }
+    //         cb(result);
+    //     });
+    // }
+
+    deleteOne: function(table1, filters, cb){
+        let query = "DELETE FROM ?? WHERE ?";
+    
+        connection.query(query, [table1, filters], (err, result) => {
+          if(err) {
+            throw err;
+          }
+          cb(result);
         });
+      
     }
    
 
