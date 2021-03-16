@@ -25,21 +25,21 @@ $(function() {
     });
 
     $(".eatburger").on("click", function(event) {
+      event.preventDefault();
         let id = $(this).data("id");
-        let devouredBurger = $(this).data("devouredBurger");
-        // let devouredBurger = {
-        //     devoured: 1
-        // }; 
+        // let devouredBurger = $(this).data("devouredBurger");
         let devouredState = {
-          devoured: devouredBurger
-        };
+            devoured: 1
+        }; 
+        // let devouredState = {
+        //   devoured: devouredBurger
+        // };
 
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
           type: "PUT",
           data: devouredState
-        }).then(
-          function() {
+        }).then(function() {
             console.log("Burger devoured");
             // Reload the page to get the updated list
             location.reload();
@@ -47,7 +47,8 @@ $(function() {
         );
       });
 
-      $(".eatenburger").on("click", function(event) {
+      $(".delete-button").on("click", function(event) {
+        event.preventDefault();
         
         let id = $(this).data("id");
     
