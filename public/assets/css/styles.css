@@ -3,7 +3,7 @@ body {
     background-color: green;
     color: rgb(238, 174, 11);
     border-radius: 0;
-    border-bottom: 40px solid  rgb(238, 174, 11);
+    border-bottom: 40px solid rgb(238, 174, 11);
     font: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 };
