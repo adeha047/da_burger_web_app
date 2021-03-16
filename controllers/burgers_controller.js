@@ -51,7 +51,7 @@ router.put("/api/burgers/:id", function (req, res) {
 router.delete("/api/burgers/:id", (req, res) => {
   // req.params --> we have req.params.id
   // req.body --> not needed
-  burger.delete({ id: req.params.id }, data => {
+  burger.deleteOne({ id: req.params.id }, data => {
     // errs -> no error input
     // data handle it
     console.log(data);
