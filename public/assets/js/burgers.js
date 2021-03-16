@@ -27,13 +27,21 @@ $(function() {
     $(".eatburger").on("click", function(event) {
       event.preventDefault();
         let id = $(this).data("id");
+        console.log(id)
         let devouredBurger = $(this).data("devouredBurger");
         // let devouredState = {
         //     devoured: 1
         // }; 
+        if (devouredBurger === 1) {
+          devouredBurger = 0; 
+        }
+        else {
+          devouredBurger = 1;
+        }
         let devouredState = {
           devoured: devouredBurger
         };
+        console.log(devouredState)
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
           type: "PUT",

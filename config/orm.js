@@ -97,10 +97,10 @@ let orm = {
     //     });
     // },
 
-    updateOne: function(table1, filters, cb){
-        let query = "UPDATE FROM ?? WHERE ?";
+    updateOne: function(table1, values, filters, cb){
+        let query = "UPDATE ?? SET ? WHERE ?";
     
-        connection.query(query, [table1, filters], (err, result) => {
+        connection.query(query, [table1, values, filters], (err, result) => {
           if(err) {
             throw err;
           }
@@ -139,8 +139,6 @@ let orm = {
         });
       
     }
-   
-
 };
 
 

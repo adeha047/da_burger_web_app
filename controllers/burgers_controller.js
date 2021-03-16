@@ -28,10 +28,11 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = {id:req.params.id}
+  console.log("this is my put method")
 
-  // console.log(req.params.id);
-  // console.log(req.body)
+  console.log(req.params.id);
+  console.log(req.body)
 
   burger.updateOne(
     {
@@ -39,7 +40,8 @@ router.put("/api/burgers/:id", function (req, res) {
     }, 
     condition, 
     function (result) {
-      if (result.changedRows == 0) {
+      console.log(result)
+      if (result.affectedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
