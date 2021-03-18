@@ -10,8 +10,8 @@
 
 ## Table of Contents
 
-* [Demo](#demo)
 * [Description](#Description)
+* [Demo](#demo)
 * [links](#links)
 * [Usage](#Usage)
 * [tests](#tests)
