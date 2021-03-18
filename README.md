@@ -10,7 +10,7 @@
 
 ## Table of Contents
 
-* [Installation](#installation)
+* [Demo](#demo)
 * [Description](#Description)
 * [links](#links)
 * [Usage](#Usage)
@@ -21,7 +21,7 @@
 
 ## Demo
 
-
+![demo](/assets/da_burger_app.gif)
 
 ## Links 
 
