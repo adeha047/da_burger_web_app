@@ -14,7 +14,7 @@
 * [Demo](#demo)
 * [links](#links)
 * [Usage](#Usage)
-* [tests](#tests)
+* [tech](#tech)
 * [licenses](#licenses)
 * [Questions](#Questions)
 
@@ -44,10 +44,10 @@ npm i mysql -S
 
 ## Tech Used
 
-MySql
-express.js
-node.js
-handlebars.js
+1. MySql
+2. express.js
+3. node.js
+4. handlebars.js
 
 
 ## Licenses
